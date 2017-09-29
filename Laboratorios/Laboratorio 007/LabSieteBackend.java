@@ -1,118 +1,20 @@
 /*
 
 	@author-name: Roger Ulate Rivera
-	@author-creation-date: 09/08/2017
+	@author-creation-date: 09/29/2017
 
 */
 
 import javax.swing.JOptionPane;
 
-public class LabSeisBackend {
+public class LabSieteBackend {
 
 
 	/*********************************************/
 	/*                   METODOS                 */
 	/*********************************************/
 
-	// Ejercicio #1
-	public int sumatorio(int x, int n) {
-
-		int resultado = x;
-		int aumento = x + 1;
-
-		for (int i = aumento; i <= n; i++) {
-			
-			resultado += i;
-
-		}
-
-		return resultado;
-
-	}
-
-	// Ejercicio #2
-	public boolean calcularNumeroPrimo(int valor){
-
-		/*
-		Numero ES PRIMO o NO:
-
-		Descripcion: Divisible entre SI y 1.
-		Aqui se obtiene el RESIDUO y el COCIENTE, me permite corroborar dos verdades, 
-		
-		* (para ser # PRIMO el RESIDUO debe ser != 0 && COCIENTE > DIVISOR).
-
-		Pruebas: 
-		Numeros Primos: 2, 3, 5, 7, 11, 223*
-		Numeros NO Primos: 
-
-		*/
-
-		// Variables del metodo.
-		int i = 2;
-		boolean resultado = true;
-		
-		
-		if(valor != 1) {
-
-			// Se recorre de i hasta el limite (hasta VALOR exclusivo).
-			while(i <= valor){
-
-				int residuo = valor % i;
-				int cociente = valor / i;
-
-				if(residuo == 0) {
-
-					if(cociente <= i){
-
-						//resultado = "No es primo";
-						resultado = false;
-
-					}
-
-				}
-
-				// Evaluar siguiente divisor al Incrementar el contador.
-				i++;
-
-			}
-
-		}else{
-
-			// Si el # recibido en VALOR == 1, siempre sera PRIMO.
-			resultado = true;
-
-		}
-
-		// Retornar resultado de la funcion
-		return resultado;
-
-	}
-
-	// Ejercicio #3
-	public void imprimirArreglo(int [] arreglo) {
-
-		for (int i = 0; i < arreglo.length; i++) {
-			
-			System.out.println(arreglo[i]);
-
-		}
-
-	}
-
-	// Ejercicio #4
-	public int sumaDeArreglo(int [] arreglo) {
-
-		int resultado = 0;
-
-		for (int i = 0; i < arreglo.length; i++) {
-			
-			resultado += arreglo[i];
-
-		}
-
-		return resultado;
-
-	}
+	
 
 	/*
 	public void getMenu() {

@@ -1,7 +1,7 @@
 /*
 
 	@author-name: Roger Ulate Rivera
-	@author-creation-date: 09/08/2017
+	@author-creation-date: 09/28/2017
 
 */
 
@@ -15,10 +15,10 @@ public class LaboratorioSeis {
 		// Listado de instancias
 		LabSeisBackend backend = new LabSeisBackend();
 
-		int [] arreglo = {1,2,4};
-		int resultado;
+		int limite = 5;
+		boolean resultado;
 
-		resultado = backend.sumaDeArreglo(arreglo);
+		resultado = calcularNumeroPrimo(limite);
 
 		System.out.println(resultado);
 

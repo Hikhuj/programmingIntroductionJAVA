@@ -1,7 +1,7 @@
 /*
 
 	@author-name: Roger Ulate Rivera
-	@author-creation-date: 09/08/2017
+	@author-creation-date: 09/28/2017
 
 */
 
@@ -30,8 +30,8 @@ public class LabSeisBackend {
 
 	}
 
-	// Ejercicio #2
-	public boolean calcularNumeroPrimo(int valor){
+	
+	public boolean calcularNumeroPrimo(int limite){
 
 		/*
 		Numero ES PRIMO o NO:
@@ -52,13 +52,13 @@ public class LabSeisBackend {
 		boolean resultado = true;
 		
 		
-		if(valor != 1) {
+		if(limite != 1) {
 
-			// Se recorre de i hasta el limite (hasta VALOR exclusivo).
-			while(i <= valor){
+			// Recorre de i hasta el limite (hasta VALOR inclusivo).
+			while(i <= limite){
 
-				int residuo = valor % i;
-				int cociente = valor / i;
+				int residuo = limite % i;
+				int cociente = limite / i;
 
 				if(residuo == 0) {
 
@@ -87,6 +87,7 @@ public class LabSeisBackend {
 		return resultado;
 
 	}
+	
 
 	// Ejercicio #3
 	public void imprimirArreglo(int [] arreglo) {
@@ -114,6 +115,7 @@ public class LabSeisBackend {
 
 	}
 
+
 	/*
 	public void getMenu() {
 
@@ -121,7 +123,7 @@ public class LabSeisBackend {
 		String opcionMenuString;
 		int opcionMenu;
 
-		opcionMenuString = JOptionPane.showInputDialog(null, "Elija un numero correspondiente a una opcion\n1. Productoria\n2. Tirar dados y obtener suma total de numeros obtenidos\n3. Calcular serie Harmonica\n4. Salir del juego");
+		opcionMenuString = JOptionPane.showInputDialog(null, "Elija un numero correspondiente a una opcion\n1. Sumatoria\n2. Imprimir numeros primos\n3. Calcular serie Harmonica\n4. Salir del juego");
 
 		try {
 
@@ -154,7 +156,7 @@ public class LabSeisBackend {
 
 	}
 
-
+	/*
 	public void setOpcionMenu(int opcionMenu) {
 
 		switch (opcionMenu) {
