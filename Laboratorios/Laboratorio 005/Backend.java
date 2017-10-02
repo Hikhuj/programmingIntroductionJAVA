@@ -13,6 +13,55 @@ public class Backend {
 	/*********************************************/
 	/*                   METODOS                 */
 	/*********************************************/
+	// Ejercicio #1: Calcular Factorial
+	public long calcularFactorial(int factorialDe) {
+
+		/*
+		Usando esto dria siempre el doble, por lo que habria que dividir siempre a la mitad
+
+
+		long resultado = 2;
+
+		for (int i = 1; i <= factorialDe; i++) {
+			
+			resultado *= i;
+
+		}
+
+		return resultado;
+		*/
+
+		long resultado = 1;
+
+		for (int i = 2; i <= factorialDe; i++) {
+			
+			resultado *= i;
+
+		}
+
+		return resultado;
+
+	}
+
+
+	public void controlCalcularFactorial() {
+
+		int numeroUno;
+		String valor;
+		long resultado;
+
+		JOptionPane.showMessageDialog(null, "Calcular Factorial");
+
+		valor = JOptionPane.showInputDialog("Numero hasta donde calculadre factorial");
+		numeroUno = obtenerResultadoTryCatch(valor);
+
+		resultado = calcularFactorial(numeroUno);
+
+		JOptionPane.showMessageDialog(null, "El factorial de " + numeroUno + "! = " + resultado);
+
+
+	}
+
 
 	// Ejercicio #4 de Ciclos
 	public int productoria(int valor, int valor2) {
@@ -28,6 +77,7 @@ public class Backend {
 		return resultado;
 
 	}
+
 
 	public void controlProductoria() {
 
@@ -124,14 +174,14 @@ public class Backend {
 		String opcionMenuString;
 		int opcionMenu;
 
-		opcionMenuString = JOptionPane.showInputDialog(null, "Elija un numero correspondiente a una opcion\n1. Productoria\n2. Tirar dados y obtener suma total de numeros obtenidos\n3. Calcular serie Harmonica\n4. Salir del juego");
+		opcionMenuString = JOptionPane.showInputDialog(null, "Elija un numero correspondiente a una opcion\n1. Calcular Factorial\n2. Productoria\n3. Tirar dados y obtener suma total de numeros obtenidos\n4. Calcular serie Harmonica\n5. Salir del juego");
 
 		try {
 
 			// Convertir el valor de opcionMenu
 			opcionMenu = Integer.parseInt(opcionMenuString);
 
-			if(opcionMenu >= 1 && opcionMenu <= 4) {
+			if(opcionMenu >= 1 && opcionMenu <= 5) {
 
 				setOpcionMenu(opcionMenu);
 
@@ -163,27 +213,38 @@ public class Backend {
 		switch (opcionMenu) {
 
 			case 1:
+				controlCalcularFactorial();
+
+				// Retornar al menu para continuar App
+				getMenu();
+
+				break;
+
+			case 2:
 				controlProductoria();
 				
 				// Retornar al menu para continuar App
 				getMenu();
 				
 				break;
-			case 2:
+
+			case 3:
 				controlDadosTotalTirados();
 				
 				// Retornar al menu para continuar App
 				getMenu();
 				
 				break;
-			case 3:
+
+			case 4:
 				controlSerieHarmonica();
 				
 				// Retornar al menu para continuar App
 				getMenu();
 				
 				break;
-			case 4:
+
+			case 5:
 				salirJuego();
 				
 				break;
