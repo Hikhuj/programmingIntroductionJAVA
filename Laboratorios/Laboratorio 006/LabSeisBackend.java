@@ -9,13 +9,15 @@ import javax.swing.JOptionPane;
 
 public class LabSeisBackend {
 
+	// Atributos
+	private int [] arreglo = {12,45,65,23,76,12};
 
 	/*********************************************/
 	/*                   METODOS                 */
 	/*********************************************/
 
 	// Ejercicio #1
-	public int sumatorio(int x, int n) {
+	private int sumatoria(int x, int n) {
 
 		int resultado = x;
 		int aumento = x + 1;
@@ -30,8 +32,32 @@ public class LabSeisBackend {
 
 	}
 
+
+	// Para MENU
+	public void controlSumatoria() {
+
+		int numeroUno;
+		int numeroDos;
+		String valor;
+		String valorDos;
+		int resultado = 0;
+
+		JOptionPane.showMessageDialog(null, "Calcular sumatoria en i desde x hasta n");
+
+		valor = JOptionPane.showInputDialog("Numero entero desde comenzare a contar");
+		numeroUno = obtenerResultadoTryCatch(valor);
+
+		valorDos = JOptionPane.showInputDialog("Numero entero hasta donde llegare a calcular");
+		numeroDos = obtenerResultadoTryCatch(valorDos);
+
+		resultado = sumatoria(numeroUno, numeroDos);
+
+		JOptionPane.showMessageDialog(null, "El total de la sumatoria es: " + resultado);
+
+	}
+
 	
-	public boolean calcularNumeroPrimo(int limite){
+	private boolean calcularNumeroPrimo(int valor){
 
 		/*
 		Numero ES PRIMO o NO:
@@ -52,13 +78,13 @@ public class LabSeisBackend {
 		boolean resultado = true;
 		
 		
-		if(limite != 1) {
+		if(valor != 1) {
 
 			// Recorre de i hasta el limite (hasta VALOR inclusivo).
-			while(i <= limite){
+			while(i < valor){
 
-				int residuo = limite % i;
-				int cociente = limite / i;
+				int residuo = valor % i;
+				int cociente = valor / i;
 
 				if(residuo == 0) {
 
@@ -87,10 +113,48 @@ public class LabSeisBackend {
 		return resultado;
 
 	}
-	
+
+
+	public void imprimirNumerosPrimos(int limite) {
+
+		boolean resultado;
+
+		for (int i = 1; i <= limite; i++) {
+			
+			resultado = calcularNumeroPrimo(i);
+
+			if (resultado == true) {
+				
+				System.out.println("Numero " + i + " es primo");
+
+			}
+
+		}
+
+	}
+
+
+	// Para MENU
+	public void controlImprimirNumerosPrimos() {
+
+		int numeroUno;
+		String valor;
+		int resultado = 0;
+
+		JOptionPane.showMessageDialog(null, "Imprimir numeros primos hasta un limite dado");
+
+		valor = JOptionPane.showInputDialog("Dame el numero limite tipo entero hasta donde calculare");
+		numeroUno = obtenerResultadoTryCatch(valor);
+
+		imprimirNumerosPrimos(numeroUno);
+
+		JOptionPane.showMessageDialog(null, "Revisar terminal para resultado");
+
+	}
+
 
 	// Ejercicio #3
-	public void imprimirArreglo(int [] arreglo) {
+	private void imprimirArreglo(int [] arreglo) {
 
 		for (int i = 0; i < arreglo.length; i++) {
 			
@@ -100,14 +164,27 @@ public class LabSeisBackend {
 
 	}
 
+
+	// Para MENU
+	public void controlImprimirArreglo() {
+
+		JOptionPane.showMessageDialog(null, "Imprimir arreglo");
+
+		imprimirArreglo(this.arreglo);
+
+		JOptionPane.showMessageDialog(null, "Revisar terminal para resultado");
+
+	}
+
+
 	// Ejercicio #4
-	public int sumaDeArreglo(int [] arreglo) {
+	public int sumaDeArreglo(int [] sumaArreglo) {
 
 		int resultado = 0;
 
-		for (int i = 0; i < arreglo.length; i++) {
+		for (int i = 0; i < sumaArreglo.length; i++) {
 			
-			resultado += arreglo[i];
+			resultado += sumaArreglo[i];
 
 		}
 
@@ -116,14 +193,25 @@ public class LabSeisBackend {
 	}
 
 
-	/*
+	// Para MENU
+	public void controlSumaDeArreglo() {
+
+		JOptionPane.showMessageDialog(null, "Imprimire arreglo que obtengo");
+
+		sumaDeArreglo(arreglo);
+
+		JOptionPane.showMessageDialog(null, "Revisar terminal para resultado");
+
+	}
+
+
 	public void getMenu() {
 
 		// Variables
 		String opcionMenuString;
 		int opcionMenu;
 
-		opcionMenuString = JOptionPane.showInputDialog(null, "Elija un numero correspondiente a una opcion\n1. Sumatoria\n2. Imprimir numeros primos\n3. Calcular serie Harmonica\n4. Salir del juego");
+		opcionMenuString = JOptionPane.showInputDialog(null, "Elija un numero correspondiente a una opcion\n1. Sumatoria\n2. Imprimir numeros primos\n3. Imprimir un arreglo tipo entero\n4. Sumatoria de un arreglo");
 
 		try {
 
@@ -156,33 +244,44 @@ public class LabSeisBackend {
 
 	}
 
-	/*
+
 	public void setOpcionMenu(int opcionMenu) {
 
 		switch (opcionMenu) {
 
 			case 1:
-				controlProductoria();
-				
+				controlSumatoria();
+
 				// Retornar al menu para continuar App
 				getMenu();
-				
+
 				break;
+
 			case 2:
-				controlDadosTotalTirados();
+				controlImprimirNumerosPrimos();
 				
 				// Retornar al menu para continuar App
 				getMenu();
 				
 				break;
+
 			case 3:
-				controlSerieHarmonica();
+				controlImprimirArreglo();
 				
 				// Retornar al menu para continuar App
 				getMenu();
 				
 				break;
+
 			case 4:
+				controlSumaDeArreglo();
+				
+				// Retornar al menu para continuar App
+				getMenu();
+				
+				break;
+
+			case 5:
 				salirJuego();
 				
 				break;
@@ -190,7 +289,6 @@ public class LabSeisBackend {
 		}
 
 	}
-	*/
 	
 
 	/*********************************************/

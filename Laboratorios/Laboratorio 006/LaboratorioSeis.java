@@ -15,12 +15,7 @@ public class LaboratorioSeis {
 		// Listado de instancias
 		LabSeisBackend backend = new LabSeisBackend();
 
-		int limite = 5;
-		boolean resultado;
-
-		resultado = calcularNumeroPrimo(limite);
-
-		System.out.println(resultado);
+		backend.getMenu();
 
 	}
 

@@ -14,7 +14,7 @@ public class Backend {
 	/*                   METODOS                 */
 	/*********************************************/
 	// Ejercicio #1: Calcular Factorial
-	public long calcularFactorial(int factorialDe) {
+	private long calcularFactorial(int factorialDe) {
 
 		/*
 		Usando esto dria siempre el doble, por lo que habria que dividir siempre a la mitad
@@ -64,7 +64,7 @@ public class Backend {
 
 
 	// Ejercicio #4 de Ciclos
-	public int productoria(int valor, int valor2) {
+	private int productoria(int valor, int valor2) {
 
 		int resultado = valor;
 
@@ -103,7 +103,7 @@ public class Backend {
 
 
 	// Ejercicio #8 de Ciclos
-	public int dadosTotalTiradas() {
+	private int dadosTotalTiradas() {
 
 		int resultado = 0;
 		int tiradaAleatoria;
@@ -135,7 +135,7 @@ public class Backend {
 
 
 	// Ejercicion #13 de Ciclos
-	public int serieHarmonica(int valor) {
+	private int serieHarmonica(int valor) {
 
 		int resultado = 0;
 
