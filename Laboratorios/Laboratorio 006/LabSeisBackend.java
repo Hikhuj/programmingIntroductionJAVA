@@ -115,7 +115,7 @@ public class LabSeisBackend {
 	}
 
 
-	public void imprimirNumerosPrimos(int limite) {
+	private void imprimirNumerosPrimos(int limite) {
 
 		boolean resultado;
 
@@ -178,7 +178,7 @@ public class LabSeisBackend {
 
 
 	// Ejercicio #4
-	public int sumaDeArreglo(int [] sumaArreglo) {
+	private int sumaDeArreglo(int [] sumaArreglo) {
 
 		int resultado = 0;
 
