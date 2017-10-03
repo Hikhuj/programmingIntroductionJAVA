@@ -9,55 +9,12 @@ import javax.swing.JOptionPane;
 
 public class LabSieteBackend {
 
-	// Atributos
-	private int [] arreglo = {12,45,65,23,76,12};
 
+	/*********************************************/
+	/*                   METODOS                 */
+	/*********************************************/
 
-
-	/***************** METODOS *****************/
-
-	public int calcularFactorial(int n) {
-
-		int resultado;
-
-		if (n == 0) {
-			
-			resultado = 0;
-
-		} else {
-
-			resultado = calcularFactorial(n) * calcularFactorial(n - 1);
-
-		}
-
-		return resultado;
-
-	}
-
-
-	// Ejercicio #3
-	private void imprimirArreglo(int [] arreglo) {
-
-		for (int i = 0; i < arreglo.length; i++) {
-			
-			System.out.println(arreglo[i]);
-
-		}
-
-	}
-
-
-	// Para MENU
-	public void controlImprimirArreglo() {
-
-		JOptionPane.showMessageDialog(null, "Imprimir arreglo");
-
-		imprimirArreglo(this.arreglo);
-
-		JOptionPane.showMessageDialog(null, "Revisar terminal para resultado");
-
-	}
-
+	
 
 	/*
 	public void getMenu() {
