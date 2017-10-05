@@ -9,24 +9,25 @@ import javax.swing.JOptionPane;
 
 public class LabSieteBackend {
 
-	// Atributos
+	// Lista de atributos
 	private int [] arreglo = {12,45,65,23,76,12};
-
 
 
 	/***************** METODOS *****************/
 
-	public int calcularFactorial(int n) {
+	// Ejercicio #1
+	// Calcular factorial
+	private int calcularFactorial(int n) {
 
 		int resultado;
 
 		if (n == 0) {
 			
-			resultado = 0;
+			resultado = 1;
 
 		} else {
 
-			resultado = calcularFactorial(n) * calcularFactorial(n - 1);
+			resultado = n * calcularFactorial(n - 1);
 
 		}
 
@@ -35,28 +36,60 @@ public class LabSieteBackend {
 	}
 
 
-	// Ejercicio #3
-	private void imprimirArreglo(int [] arreglo) {
+	// Ejercicio #2
+	// Imprimir arreglo recursivamente
+	public void imprimirArregloRecursivo(int [] arreglo) {
 
-		for (int i = 0; i < arreglo.length; i++) {
-			
-			System.out.println(arreglo[i]);
+		int i = 0;
+
+		System.out.println(arreglo[i + 1]);
+
+		imprimirArregloRecursivo(arreglo);
+
+	}
+
+
+	public int productoPunto(int [] arregloA, int [] arregloB) {
+
+		int resultado = 0;
+		int [] arregloMenor;
+
+		if (arregloA.length > arregloB.length) {
+
+			for (int i = 0; i < arregloB.length; i++) {
+				
+				arregloA[i] = arregloA[i] * arregloB[i];
+
+			}
+
+			for (int i = 0; i < arregloA.length; i++) {
+				
+				resultado += arregloA[i];
+
+			}
+
+		} else {
+
+			for (int i = 0; i < arregloA.length; i++) {
+				
+				arregloB[i] = arregloB[i] * arregloA[i];
+
+			}
+
+			for (int i = 0; i < arregloB.length; i++) {
+				
+				resultado += arregloB[i];
+
+			}
 
 		}
 
-	}
-
-
-	// Para MENU
-	public void controlImprimirArreglo() {
-
-		JOptionPane.showMessageDialog(null, "Imprimir arreglo");
-
-		imprimirArreglo(this.arreglo);
-
-		JOptionPane.showMessageDialog(null, "Revisar terminal para resultado");
+		return resultado;
 
 	}
+
+
+
 
 
 	/*
