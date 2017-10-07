@@ -13,10 +13,10 @@ public class LaboratorioSiete {
 	public static void main(String[] args) {
 
 		// Listado de instancias
-		LabSeisBackend backend = new LabSieteBackend();
+		LabSieteBackend backend = new LabSieteBackend();
 
+		backend.getMenu();
 		
-
 	}
 
 }
