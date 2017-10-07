@@ -59,13 +59,13 @@ public class LabSieteBackend {
 
 	// Ejercicio #2
 	// Imprimir arreglo recursivamente
-	private void imprimirArregloRecursivo(int [] arreglo) {
+	private void imprimirArregloRecursivo(this.arreglo, int i) {
 
-		int i = 0;
+		if (i == 0) {
+			
+			i
 
-		System.out.println(arreglo[i + 1]);
-
-		imprimirArregloRecursivo(arreglo);
+		}
 
 	}
 
