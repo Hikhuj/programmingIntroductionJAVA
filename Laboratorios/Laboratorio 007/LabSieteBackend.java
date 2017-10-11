@@ -59,9 +59,11 @@ public class LabSieteBackend {
 
 	// Ejercicio #2
 	// Imprimir arreglo recursivamente
+	/*
 	private void imprimirArregloRecursivo(int [] arreglo, int i) {
 
 		if (i == 0) {
+<<<<<<< HEAD
 			
 			System.out.println(arreglo[0]);
 
@@ -69,21 +71,49 @@ public class LabSieteBackend {
 
 			imprimirArregloRecursivo(arreglo, (i - 1));
 
+=======
+			System.out.println(arreglo[i]);
+		} else {
+			return arreglo[imprimirArregloRecursivo(arreglo, i - 1)];
+>>>>>>> master
 		}
 
 	}
+	*/
 
+	public void imprimirArregloRecursivo(int limite){
+        
+        int [] arreglo = this.arreglo1;
+        int largoArreglo = this.arreglo1.length;
+
+        if (limite == largoArreglo - 1) {
+        	System.out.println("Elemento en posición " + limite + " es " + arreglo[largoArreglo]);
+        } else {
+			System.out.println("Elemento en posición " + limite + " es " + arreglo[largoArreglo]);
+			imprimirArregloRecursivo(limite + 1);
+        }
+
+    }
 
 	// Control: Ejercicio #2
 	public void controlImprimirArregloRecursivo() {
 
+<<<<<<< HEAD
 		int parametro = (this.arreglo1.length) - 1;
 		
+=======
+		int limite = this.arreglo1.length;
+
+>>>>>>> master
 		JOptionPane.showMessageDialog(null, "Imprimir arreglo recursivo");
 
 		JOptionPane.showMessageDialog(null, "Obteniendo arreglo para imprimir");
 
+<<<<<<< HEAD
 		imprimirArregloRecursivo(this.arreglo1, parametro);
+=======
+		imprimirArregloRecursivo(limite);
+>>>>>>> master
 
 	}
 
