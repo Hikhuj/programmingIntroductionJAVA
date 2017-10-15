@@ -7,10 +7,11 @@
 
 // Importing libraries
 import java.io.*;
+import java.text.SimpleDateFormat;
 
 public class Student {
 
-	// Class atributes
+	/* ATTRIBUTES */
 	private String studentFirstName;
 	private String studentMiddleName;
 	private String studentLastName;
@@ -21,6 +22,10 @@ public class Student {
 	private String studentAddressCity;
 	private String studentAddressState;
 	private int studentAddressZipcode;
+
+
+	/* INSTANCES */
+	
 
 
 	/* CONSTRUCTORS */
@@ -161,6 +166,13 @@ public class Student {
 
 	public int getStudentAddressZipcode() {
 		return studentAddressZipcode;
+	}
+
+
+	public void setStudentBirthDate() {
+
+
+
 	}
 
 }
