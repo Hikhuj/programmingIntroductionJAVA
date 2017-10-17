@@ -8,6 +8,20 @@
 // Importing libraries
 public class Backend{
 	
+	// Ejercicio #1
+	public int [][] matrizIdentidad(int largo, int ancho) {
+
+		int [][] resultado;
+
+		// Evaluacion
+		if (largo == ancho) {
+			resultado = new int[largo][ancho];
+		}
+
+	}
+
+
+
 	// Ejercicio #2
 	public void encontrarAdyacencias(int [] arreglo){
 		
