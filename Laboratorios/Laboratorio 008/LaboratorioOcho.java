@@ -18,7 +18,17 @@ public class LaboratorioOcho{
 		int [][] matriz = {{14,9,8,7},{21,11,1,23},{11,21,19,12}};
 		int [] resultado = new int[arreglo3.length];
 		int [] resultado2 = new int[2];
+		int [][] resultado3 = null;
+		int largo = 5;
+		int ancho = 5;
 
+		System.out.println();
+
+
+		// Ejercicio #1
+		System.out.println("EJERCICIO #1: MATRIZ IDENTIDAD");
+		resultado3 = labOcho.matrizIdentidad(largo, ancho);
+		labOcho.imprimirMatriz(resultado3);
 		System.out.println();
 
 

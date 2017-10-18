@@ -11,12 +11,19 @@ public class Backend{
 	// Ejercicio #1
 	public int [][] matrizIdentidad(int largo, int ancho) {
 
-		int [][] resultado;
+		int [][] resultado = null;
+		int j;
 
 		// Evaluacion
 		if (largo == ancho) {
 			resultado = new int[largo][ancho];
+			for (int i = 0; i < resultado.length; i++ ) {
+				j = i;
+				resultado[i][j] = 1;
+			}
 		}
+
+		return resultado;
 
 	}
 
