@@ -15,7 +15,7 @@ public class LaboratorioOcho{
 		int [] arreglo = {1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0};
 		int [] arreglo2 = {4,8,2,7};
 		int [] arreglo3 = {6,7,8,9,10};
-		int [][] matriz = {{-23,2,8,7},{21,11,9,4},{1,21,19,12}};
+		int [][] matriz = {{23,2,8,7},{21,11,9,4},{1,21,2,12}};
 		//int [][] matriz = {{-5, 0, -1}, {10, 15, 30}, {2, 6, 5}};
 		int [] resultado = new int[arreglo3.length];
 		int [] resultado2 = new int[2];
