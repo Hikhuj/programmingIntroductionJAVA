@@ -44,16 +44,30 @@ public class Backend{
 
 
 	// Ejercicio #3
+	/**/
 	public int [] menorNumeroEnMatriz(int [][] matriz) {
+		
+		/*
+			(vector) -> array
+
+			Retorna la fila y columna en un arreglo dada un vector
+
+			int [][] matriz = {{23,1,8,7},{21,11,9,4},{11,21,19,12}} --> matriz[0][1]
+		*/
+
 
 		int [] resultado = new int [2];
+		int base = matriz[0][0];
 
-		for (int i = 1; i < matriz.length; i++) {
-			for (int j = 1; j < matriz[i].length; j++) {
-				if (matriz[i - 1][j - 1] < matriz[i][j]) {
-					resultado[0] = i - 1;
-					resultado[1] = j - 1;
-				} else {
+		// recorrer lineas
+		for (int i = 0; i < matriz.length; i++) {
+			// recorrer columnas
+			for (int j = 0; j < matriz[i].length; j++) {
+				// si el numero base es mayor al de comparador
+				// si el comparador es menor, se asigna a la base y se almacenan las coordenadas
+				// la idea es ir comparando del mayor hasta llegar al menor
+				if (base > matriz[i][j]) {
+					base = matriz[i][j];
 					resultado[0] = i;
 					resultado[1] = j;
 				}
