@@ -5,9 +5,11 @@
 
 */
 
+
 // Importing libraries
 import java.io.*;
-import java.text.SimpleDateFormat;
+// import java.text.SimpleDateFormat;
+
 
 public class Student {
 
@@ -22,14 +24,10 @@ public class Student {
 	private String studentAddressCity;
 	private String studentAddressState;
 	private int studentAddressZipcode;
+	private String studentBirthDate;
 
 
 	/* INSTANCES */
-	
-
-
-	/* CONSTRUCTORS */
-
 
 	// Empty constructor
 	public Student() {
@@ -69,6 +67,7 @@ public class Student {
 	}
 
 
+	/* METODOS */
 	public void setStudentFirstName(String studentFirstName) {
 		this.studentFirstName = studentFirstName;
 	}
@@ -169,10 +168,13 @@ public class Student {
 	}
 
 
-	public void setStudentBirthDate() {
+	public void setStudentBirthDate(int dia, int mes, int ano) {
+		this.studentBirthDate = "" + dia + "/" + mes + "/" + ano;
+	}
 
 
-
+	public String getStudentBirthDate() {
+		return studentBirthDate;
 	}
 
 }
