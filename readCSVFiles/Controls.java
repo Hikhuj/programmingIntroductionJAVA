@@ -12,6 +12,11 @@ import javax.swing.JOptionPane;
 
 public class Controls {
 
+	/* ATTRIBUTES */
+	private String opcionMenuString;
+	private int opcionMenu;
+
+
 	public void initialGreetings() {
 
 		System.out.println("* --------------------------------------- *");
@@ -21,7 +26,7 @@ public class Controls {
 		System.out.println("|              Cargando Datos             |");
 		System.out.println("|                                         |");
 		System.out.println("* --------------------------------------- *");
-		JOptionPane.showMessageDialog(null, "Initializing system\tLoading data", "Loading...", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Initializing system\nLoading data", "Loading...", JOptionPane.INFORMATION_MESSAGE);
 	
 	}
 
@@ -65,10 +70,74 @@ public class Controls {
 	}
 
 
-	private void salirJuego() {	
+	private void systemExit() {	
 
 		System.exit(1);
 
 	}
+
+
+	public void getMenu() {
+
+	optionMenuString = JOptionPane.showInputDialog(null, "You will do:\n1. Create student\n2. adadadada\n3. Exit\n(Please enter an obtion from 1 to 3)");
+
+	try {
+
+		// Convertir el valor de opcionMenu
+		optionMenu = Integer.parseInt(optionMenuString);
+
+		if(optionMenu >= 1 && optionMenu <= 3) {
+			setOpcionMenu(optionMenu);
+		}else{
+			JOptionPane.showMessageDialog(null, "Please choose a valid option", "Option not exist", JOptionPane.ERROR_MESSAGE);
+			getMenu();
+		}
+
+	}catch(NumberFormatException e){
+
+		JOptionPane.showMessageDialog(null, "Option is not a number, please try again", "Not a number", JOptionPane.ERROR_MESSAGE);
+		System.out.println("User did not type valid option type");
+		
+		//systemExit();
+		getMenu();
+
+	}
+
+
+	private void setOptionMenu(int optionMenu) {
+
+		switch (optionMenu) {
+
+			case 1:
+				nuevoJuego();
+				break;
+			case 2:
+				// Cambiar nombre de objeto y establecer estadisticas en 0
+				cambiarJugadorUno();
+				// Retornar al menu para continuar App
+				getMenu();
+				break;
+			case 3:
+				// Cambiar nombre de objeto y establecer estadisticas en 0
+				cambiarJugadorDos();
+				// Retornar al menu para continuar App
+				getMenu();
+				break;
+			case 4:
+				salirJuego();
+				break;
+
+		}
+
+	}
+
+
+
+
+
+
+
+
+
 
 }

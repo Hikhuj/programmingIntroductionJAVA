@@ -25,9 +25,10 @@ public class FileManager {
 	public void setRequestFolderPath() {
 		
 		//	Obtain folder's name to later use
-		this.folderPath = JOptionPane.showInputDialog("Please add the path to save the student database:");
+		this.folderPath = JOptionPane.showInputDialog("Installing database, please write where you want to install it:\n(e.g.:/path/path/folderName):");
 	
 	}
+
 
 	public String getRequestFolderPath() {
 
@@ -36,10 +37,11 @@ public class FileManager {
 
 	}
 
+
 	public void setFolderPath(String folderPath) {
 		
 		/*
-			Gets the path from the user, evaluates if exists the path
+			Gets the path from the user, if exist, will not write
 		*/
 
 		// Attributes
@@ -57,6 +59,11 @@ public class FileManager {
 		}
 
 	}
+
+	Crear un mini encrriptador con el metodo de String .replace(letra vieja, letra nueva)
+
+
+
 
 
 
