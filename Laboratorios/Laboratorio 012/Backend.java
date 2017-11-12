@@ -59,18 +59,42 @@ public class Backend {
 		this.archivoDeLetras = resultado.trim();
 	}
 
-	public void escribir() {
+	public void escribirPuentesHidrogeno() {
 
-		String archivo = archivoDeLetras;
+		String archivo = archivoDeLetras.toUpperCase();
+		char letra;
+		String complemento;
+
 		try {
 			FileWriter fileWriter = new FileWriter(rutaArchivoBasePuentesHidrogeno, true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-			bufferedWriter.write(tiempoImpreso);
-			bufferedWriter.newLine();
+			
+			while(archivo != null) {
+				for (int i = 0; i < archivo.length(); i++) {
+					letra = archivo.charAt(i);
+					complemento = obtenerComplemento(letra);
+					bufferedWriter.write("" + letra + "=" + complemento);
+					bufferedWriter.newLine();
+				}
+			}
 			bufferedWriter.close();
 		} catch(IOException ex) {
-			System.out.println("Error writing on file '" + rutaDeEscritura + "'");
+			System.out.println("Error writing on file '" + rutaArchivoBasePuentesHidrogeno + "'");
 		}
+
+	}
+
+	public String obtenerComplemento(char letra) {
+
+		String resultado = "";
+		char [] array = {"A", "T", "C", "G"};
+		String [] arrayDos = {"T", "A", "G", "C"};
+
+		while(letra !=) {
+
+		}
+
+		return resultado;
 
 	}
 
@@ -79,6 +103,7 @@ public class Backend {
 		setRutaArchivoBasePuentesHidrogeno();
 		setRutaArchivoPuentesHidrogenoInvertidos();
 		leerYAlmacenarLetras(rutaArchivoFuente);
+		escribirPuentesHidrogeno();
 
 	}
 
