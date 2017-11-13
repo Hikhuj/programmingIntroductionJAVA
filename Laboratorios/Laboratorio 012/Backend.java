@@ -59,8 +59,23 @@ public class Backend {
 		this.archivoDeLetras = resultado.trim();
 	}
 
-	public void escribirPuentesHidrogeno() {
+	public void escribirEnArchivos() {
 
+		String archivo = archivoDeLetras.toUpperCase();
+		char letra;
+		String complemento;
+
+		for (int i = 0; i < archivo.length(); i++) {
+			letra = archivo.charAt(i);
+			complemento = obtenerComplemento(letra);
+			escribirPuentesHidrogeno(letra, complemento);
+			escribirPuentesHidrogenoInvertidos(letra, complemento);
+		}
+
+	}
+
+	/*
+	public void escribirPuentesHidrogeno() {
 		String archivo = archivoDeLetras.toUpperCase();
 		char letra;
 		String complemento;
@@ -68,34 +83,55 @@ public class Backend {
 		try {
 			FileWriter fileWriter = new FileWriter(rutaArchivoBasePuentesHidrogeno, true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-			
-			while(archivo != null) {
-				for (int i = 0; i < archivo.length(); i++) {
-					letra = archivo.charAt(i);
-					complemento = obtenerComplemento(letra);
-					bufferedWriter.write("" + letra + "=" + complemento);
-					bufferedWriter.newLine();
-				}
+			for (int i = 0; i < archivo.length(); i++) {
+				letra = archivo.charAt(i);
+				complemento = obtenerComplemento(letra);
+				bufferedWriter.write("" + letra + "=" + complemento + "\n");
+				escribirPuentesHidrogenoInvertidos(letra, complemento);
 			}
 			bufferedWriter.close();
 		} catch(IOException ex) {
 			System.out.println("Error writing on file '" + rutaArchivoBasePuentesHidrogeno + "'");
 		}
+	}
+	*/
+	
+	public void escribirPuentesHidrogeno(char letra, String complemento) {
+		try {
+			FileWriter fileWriter = new FileWriter(rutaArchivoBasePuentesHidrogeno, true);
+			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			bufferedWriter.write("" + letra + "=" + complemento + "\n");
+			bufferedWriter.close();
+		} catch(IOException ex) {
+			System.out.println("Error writing on file '" + rutaArchivoBasePuentesHidrogeno + "'");
+		}
+	}
 
+	public void escribirPuentesHidrogenoInvertidos(char letra, String complemento) {
+		try {
+			FileWriter fileWriter = new FileWriter(rutaArchivoPuentesHidrogenoInvertidos, true);
+			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			bufferedWriter.write("" + complemento + "=" + letra + "\n");
+			bufferedWriter.close();
+		} catch(IOException ex) {
+			System.out.println("Error writing on file '" + rutaArchivoPuentesHidrogenoInvertidos + "'");
+		}
 	}
 
 	public String obtenerComplemento(char letra) {
-
 		String resultado = "";
-		char [] array = {"A", "T", "C", "G"};
-		String [] arrayDos = {"T", "A", "G", "C"};
 
-		while(letra !=) {
-
+		if (letra == 'A') {
+			resultado = "T";
+		} else if (letra == 'T') {
+			resultado = "A";
+		} else if (letra == 'C') {
+			resultado = "G";
+		} else {
+			resultado = "C";
 		}
 
 		return resultado;
-
 	}
 
 	public void proceso() {
@@ -103,7 +139,9 @@ public class Backend {
 		setRutaArchivoBasePuentesHidrogeno();
 		setRutaArchivoPuentesHidrogenoInvertidos();
 		leerYAlmacenarLetras(rutaArchivoFuente);
-		escribirPuentesHidrogeno();
+		System.out.println(archivoDeLetras.length());
+		escribirEnArchivos();
+		// escribirPuentesHidrogeno();
 
 	}
 
