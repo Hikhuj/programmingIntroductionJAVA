@@ -8,6 +8,7 @@ public class Backend {
 	private String rutaArchivoBasePuentesHidrogeno;
 	private String rutaArchivoPuentesHidrogenoInvertidos;
 	private String archivoDeLetras;
+	private int delayTime = 1000;
 
 	public void setRutaArchivoFuente() {
 		/*
@@ -23,7 +24,7 @@ public class Backend {
 			Obtiene la ruta de un archivo preexistente en la raiz del proyecto 
 		*/
 		File directorioActual = new File("");
-		String resultado = directorioActual.getAbsolutePath() + "/resources/02_basePuentesHidrogeno.txt";
+		String resultado = directorioActual.getAbsolutePath() + "/resources/puentesHidrogeno.txt";
 		this.rutaArchivoBasePuentesHidrogeno = resultado;
 	}
 
@@ -32,11 +33,11 @@ public class Backend {
 			Obtiene la ruta de un archivo preexistente en la raiz del proyecto 
 		*/
 		File directorioActual = new File("");
-		String resultado = directorioActual.getAbsolutePath() + "/resources/03_puentesHidrogenoInvertidos.txt";
+		String resultado = directorioActual.getAbsolutePath() + "/resources/puentesHidrogenoInvertidos.txt";
 		this.rutaArchivoPuentesHidrogenoInvertidos = resultado;
 	}
 
-	public void leerYAlmacenarLetras(String archivoALeer) {
+	public void almacenarLetrasEnVariables(String archivoALeer) {
 		String linea = null;
 		String resultado = " ";
 		StringBuilder letras = new StringBuilder();
@@ -60,7 +61,6 @@ public class Backend {
 	}
 
 	public void escribirEnArchivos() {
-
 		String archivo = archivoDeLetras.toUpperCase();
 		char letra;
 		String complemento;
@@ -71,31 +71,8 @@ public class Backend {
 			escribirPuentesHidrogeno(letra, complemento);
 			escribirPuentesHidrogenoInvertidos(letra, complemento);
 		}
-
 	}
 
-	/*
-	public void escribirPuentesHidrogeno() {
-		String archivo = archivoDeLetras.toUpperCase();
-		char letra;
-		String complemento;
-
-		try {
-			FileWriter fileWriter = new FileWriter(rutaArchivoBasePuentesHidrogeno, true);
-			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-			for (int i = 0; i < archivo.length(); i++) {
-				letra = archivo.charAt(i);
-				complemento = obtenerComplemento(letra);
-				bufferedWriter.write("" + letra + "=" + complemento + "\n");
-				escribirPuentesHidrogenoInvertidos(letra, complemento);
-			}
-			bufferedWriter.close();
-		} catch(IOException ex) {
-			System.out.println("Error writing on file '" + rutaArchivoBasePuentesHidrogeno + "'");
-		}
-	}
-	*/
-	
 	public void escribirPuentesHidrogeno(char letra, String complemento) {
 		try {
 			FileWriter fileWriter = new FileWriter(rutaArchivoBasePuentesHidrogeno, true);
@@ -135,17 +112,31 @@ public class Backend {
 	}
 
 	public void proceso() {
+		System.out.println("1. Iniciando Sistema");
+		System.out.println("2. Estableciendo ruta: Archivo fuente");
+		delayTimer(delayTime);
 		setRutaArchivoFuente();
+		System.out.println("3. Estableciendo ruta: Archivo Puentes Hidrogeno");
+		delayTimer(delayTime);
 		setRutaArchivoBasePuentesHidrogeno();
+		System.out.println("4. Estableciendo ruta: Archivo Puentes Hidrogeno Invertidos");
+		delayTimer(delayTime);
 		setRutaArchivoPuentesHidrogenoInvertidos();
-		leerYAlmacenarLetras(rutaArchivoFuente);
-		System.out.println(archivoDeLetras.length());
+		System.out.println("5. Almacenando letras en DB");
+		delayTimer(delayTime);
+		almacenarLetrasEnVariables(rutaArchivoFuente);
+		System.out.println("6. Escribiendo en archivos");
+		delayTimer(delayTime);
 		escribirEnArchivos();
-		// escribirPuentesHidrogeno();
-
+		System.out.println("7. Archivos listos");
+		delayTimer(delayTime);
 	}
 
-
-
-
+	public void delayTimer(int delay) {
+		try{
+			Thread.sleep(delay);
+		}catch(InterruptedException e){
+			System.out.println(e);
+		}
+	}
 }
