@@ -58,4 +58,8 @@ public class BackendCalculadora {
 		return reAreaTriangulo;
 	}
 
+	public void salirSistema() {
+		System.exit(1);
+	}
+
 }

@@ -16,7 +16,7 @@ public class InterfazGrafica implements ActionListener, WindowListener
   private JTextField textoDeUnaLinea;
   private JTextArea textoMultilinea;
   
-  // Elementos de visualización
+  // Elementos de visualizacion
   private JLabel etiqueta;
   
   public InterfazGrafica()
@@ -25,7 +25,7 @@ public class InterfazGrafica implements ActionListener, WindowListener
     ventana.setLayout(null);
     ventana.setBounds(150,100,535, 480); // x,y, ancho,alto
     
-     ventana.addWindowListener(this);
+    ventana.addWindowListener(this);
     
     botonAbrir = new JButton("Abrir");
     botonAbrir.setBounds(10,50,100,30);
