@@ -8,6 +8,10 @@ public class BackendCalculadora {
 	private int reDivision;
 	private int reAreaTriangulo;
 
+	public void setValorUno(int valor1) {
+		this.valorUno = valor1;
+	}
+
 	public void setOperacionSuma(int valor1, int valor2) {
 		int resultado = 0;
 		resultado = valor1 + valor2;
