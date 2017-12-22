@@ -36,6 +36,30 @@ public class InterfazClasificador {
 
 	}
 
+	public void setIndiceProduccionM() {
+
+		String indiceString = " ";
+		int indice = 0;
+
+		cantidadString = JOptionPane.showInputDialog(null, "Digite Indice PM");
+		indice = obtenerResultadoTryCatch(cantidadString);
+		backend.setIndicePM(indice);
+
+	}
+
+	public void setIndiceProduccionF() {
+
+		String indiceString = " ";
+		int indice = 0;
+
+		cantidadString = JOptionPane.showInputDialog(null, "Digite Indice PF");
+		indice = obtenerResultadoTryCatch(cantidadString);
+		backend.setIndicePF(indice);
+
+	}
+
+	
+
 	// Otros
 	public int obtenerResultadoTryCatch(String valorString) {
 
