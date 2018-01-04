@@ -9,6 +9,7 @@ public class InterfazClasificador {
 	BackEnd backend = new BackEnd();
 
 	/* METODOS */
+	/*
 	public void cantidadDeMaquinas() {
 
 		String cantidadMaquinasString = " ";
@@ -19,7 +20,9 @@ public class InterfazClasificador {
 		backend.setCantidadMaquinas(cantidadMaquinas);
 
 	}
+	*/
 
+	/*
 	public void setProduccionDiariaCadaMaquina() {
 
 		String cantidadString = " ";
@@ -35,14 +38,24 @@ public class InterfazClasificador {
 		}
 
 	}
+	*/
+
+	public void cargarRegistroDeMaquinasporCSV() {
+
+		String urlDeCSV = " ";
+		
+		urlDeCSV = JOptionPane.showInputDialog(null, "Ingrese la ruta de archivo CSV: ");
+		backend.setUbicacionDeCSV(urlDeCSV);
+
+	}
 
 	public void setIndiceProduccionM() {
 
 		String indiceString = " ";
 		int indice = 0;
 
-		cantidadString = JOptionPane.showInputDialog(null, "Digite Indice PM");
-		indice = obtenerResultadoTryCatch(cantidadString);
+		indiceString = JOptionPane.showInputDialog(null, "Digite Indice PM");
+		indice = obtenerResultadoTryCatch(indiceString);
 		backend.setIndicePM(indice);
 
 	}
@@ -52,13 +65,55 @@ public class InterfazClasificador {
 		String indiceString = " ";
 		int indice = 0;
 
-		cantidadString = JOptionPane.showInputDialog(null, "Digite Indice PF");
-		indice = obtenerResultadoTryCatch(cantidadString);
+		indiceString = JOptionPane.showInputDialog(null, "Digite Indice PF");
+		indice = obtenerResultadoTryCatch(indiceString);
 		backend.setIndicePF(indice);
 
 	}
 
-	
+	/*
+	public void promedioDeCadaMaquinaDesdeCSV() {
+		// String direccionDeArchivo = JOptionPane.showInputDialog(null, "Ingrese URL de archivo CSV:");
+		String direccionDeArchivo = "/Users/rogerjoseulaterivera/Documents/PersonalRepos/programmingIntroductionJAVA/Otros Laboratorio CENFOTEC/Ejercicio_Ciclos/produccionMaquinas.csv"
+		String line = null;
+		int [] produccion;
+		int largoArreglo = backend.getCantidadMaquinas();
+		int anchoArreglo = backend.getCantidadDiasTrabajables();
+		int [][] produccionDeMaquinas = new int [][];
+
+		/Users/rogerjoseulaterivera/Documents/PersonalRepos/programmingIntroductionJAVA/Otros Laboratorio CENFOTEC/Ejercicio_Ciclos/produccionMaquinas.csv
+
+		try{
+			FileReader archivoEnVariable = new FileReader(direccionDeArchivo);
+			BufferedReader datosBuffereados = new BufferedReader(archivoEnVariable);
+			while((line = datosBuffereados.readLine()) != null) {
+				// System.out.println(line);
+				produccion = line.split(",");
+			}
+			datosBuffereados.close();
+		}catch(FileNotFoundException ex) {
+			System.out.println("Unable to open file.");
+		}catch(IOException ex) {
+			System.out.println("Error reading file.");
+		}
+	}
+	*/
+
+	public void generarCantidadDeMaquinas() {
+
+		int cantidadMaquinas = 0;
+		backend.setCantidadMaquinas();
+		cantidadMaquinas = backend.getCantidadMaquinas();
+		JOptionPane.showMessageDialog(null, "Cantidad de maquinas: " + cantidadMaquinas);
+
+	}
+
+	public void generarClasificacionDeCadaMaquina() {
+
+		JOptionPane.showMessageDialog(null, "Clasificando maquinas, por favor espere...");
+		backend.setProduccionSemanalCadaMaquina();
+
+	}
 
 	// Otros
 	public int obtenerResultadoTryCatch(String valorString) {

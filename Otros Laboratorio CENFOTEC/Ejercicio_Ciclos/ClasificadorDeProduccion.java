@@ -4,8 +4,13 @@ public class ClasificadorDeProduccion {
 
 		InterfazClasificador interfaz = new InterfazClasificador();
 
-		interfaz.cantidadDeMaquinas();
-		interfaz.setProduccionDiariaCadaMaquina();
+		//interfaz.cantidadDeMaquinas();
+		//interfaz.setProduccionDiariaCadaMaquina();
+		interfaz.cargarRegistroDeMaquinasporCSV();
+		interfaz.setIndiceProduccionM();
+		interfaz.setIndiceProduccionF();
+		interfaz.generarCantidadDeMaquinas();
+		interfaz.generarClasificacionDeCadaMaquina();
 
 	}
 
