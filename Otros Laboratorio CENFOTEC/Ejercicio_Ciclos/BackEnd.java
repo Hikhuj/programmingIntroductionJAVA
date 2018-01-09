@@ -103,45 +103,43 @@ public class BackEnd {
 
 		// VARIABLES
 		String rutaCSV = getUbicacionDeCSV();
-		int numeroDeMaquinas = getCantidadMaquinas();
-		int numeroDeDias = getCantidadDiasTrabajables();
 		int [] resultado = null;
-		String [] produccion; // = new int[numeroDeDias];
+		String [] produccion;
 		BufferedReader datosBuffereados = null;
 		String line = null;
-		String numero = " ";
-		int numeroConvertido = 0;
-		int j = 0;
+		int numeroDeMaquina = 0;
 
 		try{
 
-			//FileReader archivoEnVariable = new FileReader(rutaCSV);
-			//BufferedReader datosBuffereados = new BufferedReader(archivoEnVariable);
-
+			// Buferear datos
 			datosBuffereados = new BufferedReader(new FileReader(rutaCSV));
 
+			// Recorrer cada linea
 			while((line = datosBuffereados.readLine()) != null) {
 
 				produccion = line.split(",");
-				int suma = 0;
-
-				for (int i = 0; i < produccion.length; i++) {
-					numero = produccion[i];
-					numeroConvertido = numero;
-					suma += numero;
+				int numero = 0;
+				int promedio = 0;
+				
+				for (int i = 0; i < produccion.length(); i++) {
+					numero = (int) (produccion[i]);
+					promedio += numero;
 				}
 
-				resultado[j] = suma;
-				j++;
+				resultado[numeroDeMaquina] = promedio;
+
+				numeroDeMaquina++;
 
 			}
 
+		// Excepciones en la lectura
 		}catch(FileNotFoundException ex) {
 			System.out.println("Unable to open file.");
 		}catch(IOException ex) {
 			System.out.println("Error reading file.");
 		}
 
+		// Almacenar resultado en una variable
 		this.produccionSemanalCadaMaquina = resultado;
 
 	}
