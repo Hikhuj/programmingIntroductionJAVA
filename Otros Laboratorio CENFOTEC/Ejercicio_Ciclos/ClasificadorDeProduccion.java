@@ -6,7 +6,7 @@ public class ClasificadorDeProduccion {
 
 		//interfaz.cantidadDeMaquinas();
 		//interfaz.setProduccionDiariaCadaMaquina();
-		interfaz.cargarRegistroDeMaquinasporCSV();
+		interfaz.cargarRegistroDeMaquinasPorCSV();
 		interfaz.setIndiceProduccionM();
 		interfaz.setIndiceProduccionF();
 		interfaz.generarCantidadDeMaquinas();

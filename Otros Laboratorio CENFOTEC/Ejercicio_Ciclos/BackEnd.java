@@ -18,9 +18,9 @@ public class BackEnd {
 
 
 	/* METODOS */
-	public void setUbicacionDeCSV(String url) {
+	public void setUbicacionDeCSV(String direccionDeArchivo) {
 
-		this.ubicacionDeCSV = url;
+		this.ubicacionDeCSV = direccionDeArchivo;
 
 	}
 
@@ -104,7 +104,7 @@ public class BackEnd {
 		// VARIABLES
 		String rutaCSV = getUbicacionDeCSV();
 		int [] resultado = null;
-		String [] produccion;
+		String [] produccion = new String[getCantidadDiasTrabajables()];
 		BufferedReader datosBuffereados = null;
 		String line = null;
 		int numeroDeMaquina = 0;
@@ -118,11 +118,12 @@ public class BackEnd {
 			while((line = datosBuffereados.readLine()) != null) {
 
 				produccion = line.split(",");
+				String numeroString = "";
 				int numero = 0;
 				int promedio = 0;
 				
-				for (int i = 0; i < produccion.length(); i++) {
-					numero = (int) (produccion[i]);
+				for (int i = 0; i < produccion.length; i++) {
+					numero = Integer.parseInt(produccion[i]);
 					promedio += numero;
 				}
 
