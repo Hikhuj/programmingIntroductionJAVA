@@ -63,8 +63,13 @@ public class InterfazClasificador {
 
 	public void imprimirPromedioDeProduccion() {
 
+		int [] promedios = backend.getProduccionSemanalCadaMaquina();
+
 		JOptionPane.showMessageDialog(null, "Imprimiendo promedios... Ver en consola.");
-		backend.imprimirProduccionSemanalCadaMaquina();
+
+		for (int i = 0; i < promedioDeMaquinas.length; i++) {
+			System.out.println("Maquina: " + (i+1) + " ->" + promedioDeMaquinas[i]);
+		}
 
 	}
 

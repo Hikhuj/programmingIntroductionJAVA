@@ -156,7 +156,7 @@ public class BackEnd {
 		int [] promedioDeMaquinas = getProduccionSemanalCadaMaquina();
 
 		for (int i = 0; i < promedioDeMaquinas.length; i++) {
-			System.out.println("Maquina " + i + " | Promedio: " + promedioDeMaquinas[i]);
+			System.out.println("Maquina: " + (i+1) + " ->" + promedioDeMaquinas[i]);
 		}
 
 	}
