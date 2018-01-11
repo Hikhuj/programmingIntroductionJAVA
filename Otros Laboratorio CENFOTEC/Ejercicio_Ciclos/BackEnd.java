@@ -103,7 +103,7 @@ public class BackEnd {
 
 		// VARIABLES
 		String rutaCSV = getUbicacionDeCSV();
-		int [] resultado = null;
+		int [] resultado = new int[getCantidadMaquinas()];
 		String [] produccion = new String[getCantidadDiasTrabajables()];
 		BufferedReader datosBuffereados = null;
 		String line = null;
@@ -148,6 +148,16 @@ public class BackEnd {
 	public int [] getProduccionSemanalCadaMaquina() {
 
 		return produccionSemanalCadaMaquina;
+
+	}
+
+	public void imprimirProduccionSemanalCadaMaquina() {
+
+		int [] promedioDeMaquinas = getProduccionSemanalCadaMaquina();
+
+		for (int i = 0; i < promedioDeMaquinas.length; i++) {
+			System.out.println("Maquina " + i + " | Promedio: " + promedioDeMaquinas[i]);
+		}
 
 	}
 

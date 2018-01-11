@@ -42,7 +42,7 @@ public class InterfazClasificador {
 	}
 
 	/*
-	/Users/rogerjoseulaterivera/Documents/PersonalRepos/programmingIntroductionJAVA/Otros Laboratorio CENFOTEC/Ejercicio_Ciclos/produccionMaquinas.csv
+	/Users/rogerjoseulaterivera/PersonalRepos/programmingIntroductionJAVA/Otros Laboratorio CENFOTEC/Ejercicio_Ciclos/produccionMaquinas2.csv
 	*/
 
 	public void generarCantidadDeMaquinas() {
@@ -60,6 +60,15 @@ public class InterfazClasificador {
 		backend.setProduccionSemanalCadaMaquina();
 
 	}
+
+	public void imprimirPromedioDeProduccion() {
+
+		JOptionPane.showMessageDialog(null, "Imprimiendo promedios... Ver en consola.");
+		backend.imprimirProduccionSemanalCadaMaquina();
+
+	}
+
+
 
 	// Otros
 	public int obtenerResultadoTryCatch(String valorString) {

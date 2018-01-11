@@ -11,6 +11,7 @@ public class ClasificadorDeProduccion {
 		interfaz.setIndiceProduccionF();
 		interfaz.generarCantidadDeMaquinas();
 		interfaz.generarClasificacionDeCadaMaquina();
+		interfaz.imprimirPromedioDeProduccion();
 
 	}
 
