@@ -151,16 +151,6 @@ public class BackEnd {
 
 	}
 
-	public void imprimirProduccionSemanalCadaMaquina() {
-
-		int [] promedioDeMaquinas = getProduccionSemanalCadaMaquina();
-
-		for (int i = 0; i < promedioDeMaquinas.length; i++) {
-			System.out.println("Maquina: " + (i+1) + " ->" + promedioDeMaquinas[i]);
-		}
-
-	}
-
 	/* Clasificacion de la produccion de cada maquina, pero debo obtener la produccion semanal de cada maquina promediada primero
 	public void setClasificarCadaMaquina() {
 		

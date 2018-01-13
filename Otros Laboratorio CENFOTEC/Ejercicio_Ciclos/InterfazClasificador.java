@@ -43,6 +43,9 @@ public class InterfazClasificador {
 
 	/*
 	/Users/rogerjoseulaterivera/PersonalRepos/programmingIntroductionJAVA/Otros Laboratorio CENFOTEC/Ejercicio_Ciclos/produccionMaquinas2.csv
+
+	Locacion en casa:
+	/Users/rogerjoseulaterivera/Documents/PersonalRepos/programmingIntroductionJAVA/Otros Laboratorio CENFOTEC/Ejercicio_Ciclos/produccionMaquinas2.csv
 	*/
 
 	public void generarCantidadDeMaquinas() {
@@ -67,8 +70,8 @@ public class InterfazClasificador {
 
 		JOptionPane.showMessageDialog(null, "Imprimiendo promedios... Ver en consola.");
 
-		for (int i = 0; i < promedioDeMaquinas.length; i++) {
-			System.out.println("Maquina: " + (i+1) + " ->" + promedioDeMaquinas[i]);
+		for (int i = 0; i < promedios.length; i++) {
+			System.out.println("Maquina: " + (i+1) + " ->" + promedios[i] + " botellas.");
 		}
 
 	}
