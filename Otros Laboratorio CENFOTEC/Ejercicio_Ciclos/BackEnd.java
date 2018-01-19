@@ -89,6 +89,7 @@ public class BackEnd {
 
 	}
 
+	// Metodo LISTO
 	public void setProduccionSemanalCadaMaquina() {
 		
 		/*
@@ -145,49 +146,41 @@ public class BackEnd {
 
 	}
 
+	// Metodo LISTO
 	public int [] getProduccionSemanalCadaMaquina() {
 
 		return produccionSemanalCadaMaquina;
 
 	}
 
-	/* Clasificacion de la produccion de cada maquina, pero debo obtener la produccion semanal de cada maquina promediada primero
 	public void setClasificarCadaMaquina() {
-		
-		// VARIABLES INICIALIZADAS
-		String rutaCSV = getUbicacionDeCSV();
-		String [] resultado = new String[getCantidadMaquinas()];
-		String line = null;
 
+		/*
+			Clasificar cada maquina con base en indice IPM
+			produccionSemanal > IPM = Excelente
+			produccionSemanal < IPM = Deficiente
+			produccionSemanal == IPM = Regular
+		*/
 
-		try{
+		int [] produccionMaquinas = getProduccionSemanalCadaMaquina();
+		String [] resultado = new String[produccionMaquinas.length];
+		int indiceIPM = getIndicePM();
 
-			FileReader archivoEnVariable = new FileReader(rutaCSV);
-			BufferedReader datosBuffereados = new BufferedReader(archivoEnVariable);
-			while((line = datosBuffereados.readLine()) != null) {
-
-				for (int i = 0; i < produccionSemanalCadaMaquina.length; i++) {
-					if (produccionSemanalCadaMaquina[i] > indicePM) {
-						resultado[i] = "Excelente";
-					}else if(produccionSemanalCadaMaquina[i] == indicePM) {
-						resultado[i] = "Buena";
-					}else {
-						resultado[i] = "Deficiente";
-					}
-				}
-
+		for (int = 0; i < produccionMaquinas.length; i++) {
+			if (produccionMaquinas[i] > indicePM) {
+				resultado[i] = "Excelente";
+			} if (produccionMaquinas[i] < indicePM) {
+				resultado[i] = "Deficiente";
+			} else {
+				resultado[i] = "Regular";
 			}
-
-		}catch(FileNotFoundException ex) {
-			System.out.println("Unable to open file.");
-		}catch(IOException ex) {
-			System.out.println("Error reading file.");
 		}
 
 		this.clasificacionDeCadaMaquina = resultado;
 
 	}
-	*/
+
+
 
 	public String[] getClasificarCadaMaquina() {
 
