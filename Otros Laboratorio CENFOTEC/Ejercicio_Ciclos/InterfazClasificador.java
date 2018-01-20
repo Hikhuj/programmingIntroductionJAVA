@@ -48,7 +48,7 @@ public class InterfazClasificador {
 	/Users/rogerjoseulaterivera/Documents/PersonalRepos/programmingIntroductionJAVA/Otros Laboratorio CENFOTEC/Ejercicio_Ciclos/produccionMaquinas2.csv
 	*/
 
-	public void generarCantidadDeMaquinas() {
+	public void mostrarCantidadDeMaquinas() {
 
 		int cantidadMaquinas = 0;
 		backend.setCantidadMaquinas();
@@ -57,14 +57,14 @@ public class InterfazClasificador {
 
 	}
 
-	public void generarClasificacionDeCadaMaquina() {
+	public void generarProduccionSemanalMaquinas() {
 
-		JOptionPane.showMessageDialog(null, "Clasificando maquinas, por favor espere...");
+		JOptionPane.showMessageDialog(null, "Generando produccion semanal de cada maquina, por favor espere...");
 		backend.setProduccionSemanalCadaMaquina();
 
 	}
 
-	public void imprimirPromedioDeProduccion() {
+	public void imprimirProduccionSemanalMaquinas() {
 
 		int [] promedios = backend.getProduccionSemanalCadaMaquina();
 
@@ -75,6 +75,33 @@ public class InterfazClasificador {
 		}
 
 	}
+
+	
+	public void generarClasificacionMaquinasPorProduccion() {
+
+		JOptionPane.showMessageDialog(null, "Clasificando promedio semanal de maquinas acorde a IPM, por favor espere...");
+		backend.setClasificarCadaMaquina();
+
+	}
+
+
+	public void imprimirClasificacionMaquinasPorProduccion() {
+
+		String [] clasificacion = null;
+
+		clasificacion = backend.getClasificarCadaMaquina();
+
+		JOptionPane.showMessageDialog(null, "Imprimiendo clasificacion de maquinas... Ver en consola.");
+
+		for (int i = 0; i < clasificacion.length; i++) {
+			int numeroMaquina = i + 1;
+
+			System.out.println("Maquina " + numeroMaquina + ", clasificacion es --> " + clasificacion[i]);
+		}
+
+	}
+
+	
 
 
 

@@ -151,45 +151,30 @@ public class BackEnd {
 
 	}
 
-	/* Clasificacion de la produccion de cada maquina, pero debo obtener la produccion semanal de cada maquina promediada primero
 	public void setClasificarCadaMaquina() {
 		
+		/* Clasificacion de la produccion de cada maquina, pero debo obtener la produccion semanal de cada maquina promediada primero*/
+
 		// VARIABLES INICIALIZADAS
-		String rutaCSV = getUbicacionDeCSV();
-		String [] resultado = new String[getCantidadMaquinas()];
-		String line = null;
+		int numero = getCantidadMaquinas();
+		String [] resultado = new String[numero];
 
-
-		try{
-
-			FileReader archivoEnVariable = new FileReader(rutaCSV);
-			BufferedReader datosBuffereados = new BufferedReader(archivoEnVariable);
-			while((line = datosBuffereados.readLine()) != null) {
-
-				for (int i = 0; i < produccionSemanalCadaMaquina.length; i++) {
-					if (produccionSemanalCadaMaquina[i] > indicePM) {
-						resultado[i] = "Excelente";
-					}else if(produccionSemanalCadaMaquina[i] == indicePM) {
-						resultado[i] = "Buena";
-					}else {
-						resultado[i] = "Deficiente";
-					}
-				}
-
+		for (int i = 0; i < produccionSemanalCadaMaquina.length; i++) {
+			if (produccionSemanalCadaMaquina[i] > indicePM) {
+				resultado[i] = "Excelente";
+			}else if(produccionSemanalCadaMaquina[i] == indicePM) {
+				resultado[i] = "Buena";
+			}else {
+				resultado[i] = "Deficiente";
 			}
-
-		}catch(FileNotFoundException ex) {
-			System.out.println("Unable to open file.");
-		}catch(IOException ex) {
-			System.out.println("Error reading file.");
 		}
 
 		this.clasificacionDeCadaMaquina = resultado;
 
 	}
-	*/
 
-	public String[] getClasificarCadaMaquina() {
+
+	public String [] getClasificarCadaMaquina() {
 
 		return clasificacionDeCadaMaquina;
 
