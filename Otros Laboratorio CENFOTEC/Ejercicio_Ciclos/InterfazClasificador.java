@@ -75,7 +75,6 @@ public class InterfazClasificador {
 		}
 
 	}
-
 	
 	public void generarClasificacionMaquinasPorProduccion() {
 
@@ -83,7 +82,6 @@ public class InterfazClasificador {
 		backend.setClasificarCadaMaquina();
 
 	}
-
 
 	public void imprimirClasificacionMaquinasPorProduccion() {
 
@@ -101,8 +99,10 @@ public class InterfazClasificador {
 
 	}
 
-	
 
+	/*
+		Aqui va la funcion de llamar a la maquina de mayor produccion
+	*/
 
 
 	// Otros

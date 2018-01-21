@@ -173,7 +173,6 @@ public class BackEnd {
 
 	}
 
-
 	public String [] getClasificarCadaMaquina() {
 
 		return clasificacionDeCadaMaquina;
