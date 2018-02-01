@@ -9,9 +9,12 @@ public class ClasificadorDeProduccion {
 		interfaz.cargarRegistroDeMaquinasPorCSV();
 		interfaz.setIndiceProduccionM();
 		interfaz.setIndiceProduccionF();
-		interfaz.generarCantidadDeMaquinas();
-		interfaz.generarClasificacionDeCadaMaquina();
-		interfaz.imprimirPromedioDeProduccion();
+		interfaz.mostrarCantidadDeMaquinas();
+		interfaz.generarProduccionSemanalMaquinas();
+		interfaz.imprimirProduccionSemanalMaquinas();
+		interfaz.generarClasificacionMaquinasPorProduccion();
+		interfaz.imprimirClasificacionMaquinasPorProduccion();
+		System.exit(1);
 
 	}
 
