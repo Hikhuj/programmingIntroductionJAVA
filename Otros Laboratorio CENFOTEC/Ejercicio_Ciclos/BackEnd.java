@@ -200,6 +200,9 @@ public class BackEnd {
 
 	}
 
+
+	// FUNCION MAQUINA DE MAYOR PRODUCCION
+
 	public void setMaquinaMayorProduccion() {
 
 		int cantidadMayor = 0;
